@@ -1,6 +1,6 @@
 import {CONFIG} from "../support/constants";
 
-describe('Teste cadastro pessoa física - Hotsite Padrão', () => {
+describe('Teste cadastro 01 - Hotsite Padrão', () => {
   beforeEach(() => {
     // Configurações iniciais para cada teste
     cy.visit('/user/cadastro');
@@ -13,7 +13,7 @@ describe('Teste cadastro pessoa física - Hotsite Padrão', () => {
 
     // Preenchendo informações pessoais
     cy.get('#namePerson').should('be.visible').type('Thiago Neves');
-    cy.get('#cpf').should('be.visible').type('843.641.130-77');
+    cy.preencherCPF('#cpf');
     cy.get('#rg').should('be.visible').type('1');
     cy.get('#birthDate').should('be.visible').type('01012000');
     cy.get('#number-cell-phone').should('be.visible').type('44991561023');
@@ -61,7 +61,8 @@ describe('Teste cadastro pessoa física - Hotsite Padrão', () => {
 
     //Preencher informações pessoa responsável
     cy.get('#namePersonResp').should('be.visible').type('Teste Crmall 01');
-    cy.get('#cpfResp').should('be.visible').type('056.291.350-58');
+    //cy.get('#cpfResp').should('be.visible').type('056.291.350-58');
+    cy.preencherCPF('#cpfResp');
     cy.get('#birthDateResp').click().wait(700).type('01012000', {delay:700});
     cy.get('#number-cell-phoneResp').should('be.visible').type('44991561023');
 
