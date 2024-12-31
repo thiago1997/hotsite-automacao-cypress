@@ -103,5 +103,5 @@ describe('Teste cadastro 01 - Hotsite Padrão', () => {
     
     //Validação pós termino do teste
     cy.url().should('include', '/user/new-user');
-})
+  })
 });
